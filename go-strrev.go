@@ -14,5 +14,5 @@ func Reverse(s string) string {
 }
 
 func main() {
-  fmt.Println("{\"reversed\" : \"" +Reverse("osArgs[1])+ "\"}")
+  fmt.Println("{\"reversed\" : \"" +Reverse(osArgs[1])+ "\"}")
 }
