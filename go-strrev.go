@@ -2,7 +2,6 @@ package main
 
 import(
       "fmt"
-      "encoding/json"
       "os"
 )
 
@@ -15,9 +14,5 @@ func Reverse(s string) string {
 }
 
 func main() {
-  byte_map := map[string]int{"reverse" : Reverse(os.Args[1])}
-
-  result, _ := json.Marshal(byte_map)
-  fmt.Println(string(result))
+  fmt.Println("{\"reversed\" : \"" +Reverse("osArgs[1])+ "\"}")
 }
-
