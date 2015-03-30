@@ -41,7 +41,7 @@ microservice:
   tags: ['go', 'strrev', 'string']
   <<: *me
   published: true
-  command: './go-strrev'
+  command: './go-strrev [string]'
   inputs:
     string:
       <<: *string_param
