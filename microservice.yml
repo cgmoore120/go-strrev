@@ -1,0 +1,54 @@
+url_param: &url_param
+  param_type: 'Url'
+  regex: '^https?:\/\/[\S]+$'
+
+alphanumeric_param: &aplhanumeric_param
+  param_type: 'Alphanumeric'
+  regex: '^[A-Za-z0-9]+$'
+
+alpha_param: &alpha_param
+  param_type: 'Alpha'
+  regex: '^[A-Za-z]+$'
+
+numeric_param: &numeric_param
+  param_type: 'Numeric'
+  regex: '^[0-9]+$'
+
+email_param: &email_param
+  param_type: 'Email'
+  regex: '^.+@.+$'
+
+string_param: &string_param
+  param_type: 'String'
+  regex: '^.*$'
+
+array_param: &array_param
+  param_type: 'Array'
+  regex:  '^\[.+\]$'
+
+me: &me
+  developer_name: 'cgmoore120'
+  developer_type: 'User'
+
+microservice:
+  name: 'go-strrev'
+  description: 'reverses a given string'
+  docker_image: 'cgmoore120/go-strrev'
+  docker_image_tag: '1.1.1'
+  repo_url: 'https://github.com/cgmoore120/go-strrev'
+  docker_hub_url: 'https://registry.hub.docker.com/u/cgmoore120/go-strrev/'
+  category: 'string'
+  tags: ['go', 'strrev', 'string']
+  <<: *me
+  published: true
+  command: './go-strrev'
+  inputs:
+    string:
+      <<: *string_param
+      required: true
+      secure: false
+      description: 'the string to reverse'
+  outputs:
+    string:
+      param_type: 'String'
+      description: 'the reversed string'
